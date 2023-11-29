@@ -1,0 +1,223 @@
+.top_menu{
+    display: block;
+    height: 50px;
+    text-align: center;
+}
+
+.search{
+    height: inherit;
+}
+
+input[type="search"] {
+  border-radius: 5px;
+  height: inherit;
+  width: 40%;
+  opacity: 0.95;
+  margin: 10px;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid grey;
+  border-radius: 15px;
+}
+
+input[type="search"]::placeholder {
+  color: black;
+}
+
+button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 50px;
+  height: inherit;
+  padding: 0;
+  margin: 0;
+  border: 1px solid grey;
+  border-radius: 15px;
+  background: white url(./img/search.png) no-repeat center;
+  background-size: 60%;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button[type="submit"]:hover {
+  opacity: 1;
+}
+
+.bottom_menu{
+    font-size: 1.5em;
+    height: 50px;
+    margin: 15px;
+    background-color: RGBA(150, 150, 150, 0.7);
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+.about{
+    display: inline-block;
+    width: 50%;
+    height: inherit;
+    text-align: left;
+}
+
+.menu{
+    display: inline-block;
+    width: 50%;
+    float: right;
+    height: inherit;
+    text-align: right;
+}
+
+.menu > a{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    margin-right: 5%;
+    text-shadow: 0 0 5px red;
+}
+
+.menu > a:hover{
+    text-shadow: 0 0 5px green;
+}
+
+.about > span{
+    font-size: 1.2em;
+    color: white;
+    vertical-align: middle;
+    text-shadow: 0 0 5px black;
+}
+
+header{
+    background-image: url(./img/nvidia_vs_amd.jpg);
+    background-size: contain;
+    border: 2px solid white;
+}
+
+.main_imgs{
+    width: 80%;
+    position: relative;
+    margin: 3% auto;
+    background-color: crimson;
+    text-align: center;
+    overflow: visible;
+}
+
+.main_imgs > img{
+    width: 30%;
+    float: left;
+    border-radius: 5px;
+}
+
+.main_imgs > img:hover{
+    transform: scale(1.5);
+}
+
+.main_imgs > img:first-child{
+    width: 20%;
+    height: 145px;
+}
+
+.main_imgs > img:last-child{
+    width: 20%;
+    height: 145px;
+}
+
+.main{
+    float: left;
+    margin: 5%;
+}
+
+.big_article{
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    width: 49%;
+    margin: auto;
+    border: 5px solid bisque;
+    background-color: RGBA(255, 204, 153, 0.7);
+    border-radius: 15px;
+}
+
+.big_article img{
+    width: 50%;
+    margin: 10px;
+    border-radius: 15px;
+    border: 5px solid bisque;
+}
+
+.big_article h3{
+    font-size: 2.4em;
+    text-shadow: 0 0 5px black;
+    color: white;
+}
+
+.big_article span{
+    margin: 10px;
+    color: black;
+}
+
+.small_articles{
+    float: right;
+    overflow: hidden;
+    width: 49%;
+}
+
+.article{
+    margin-top: 0 5% 5% 5%;
+    clear: both;
+    overflow: hidden;
+    border: 5px solid bisque;
+    background-color: RGBA(255, 204, 153, 0.7);
+    border-radius: 15px;
+}
+
+.article + .article{
+    margin-top: 5%;
+}
+
+.article img{
+    float: left;
+    width: 40%;
+    margin: 10px;
+    border-radius: 15px;
+    border: 5px solid bisque;
+}
+
+.article h3{
+    text-align: left;
+    font-size: 2em;
+    text-shadow: 0 0 5px black;
+    color: white;
+}
+
+.article span{
+    float: right;
+    margin: 10px;
+    margin-top: 0;
+    color: black;
+}
+
+footer{
+    clear: both;
+    background-color: RGBA(200, 200, 200, 0.7);
+    height: 50px;
+    text-shadow: 0 0 5px black;
+    color: white;
+}
+.left{
+    vertical-align: middle;
+    display: inline-block;
+    margin: 5px;
+}
+.right{
+    vertical-align: middle;
+    display: inline-block;
+    float: right;
+    margin: 5px;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    font: 1.1em "Segoe UI";
+}

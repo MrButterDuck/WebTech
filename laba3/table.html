@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+    <head>
+        <title>Видеокарты</title>
+    </head>
+    <body text="white" background="images/background2.jpg" alink="#c6c9c5" vlink="#c6c9c5">
+        <font face="Segoe UI">
+        <p align="center">
+            <font size="20">
+            <a href="index.html">Главная</a>
+            <a href="table.html">Характеристики</a>
+            </font>        
+        </p>
+        <p>
+            <details>
+                <p><summary>Фильтр</summary></p>
+            <form>
+                <p>
+                <label>Наименование: <input type="text"></label><br>
+                <label>Шина: <input type="text"></label><br>
+                <label>Процессор: <input type="text"></label><br>
+                <label>Память: <input type="text"></label><br>
+                <label>Шейдеры: <input type="text"></label><br>
+                <label>Дата выпуска: от <input type="date"> до <input type="date"></label><br>
+                <label>Тактирование процессора: от <input type="number"> до <input type="number"></label><br>
+                <label>Тактирование памяти: от <input type="number"> до <input type="number"></label><br>
+                </p>
+                <p>
+                <input type="button" value="Найти">
+                <input type="reset" value="Сбросить фильтр">
+                </p>
+            </form>
+            </details>
+        </p>
+        <p>
+            <details>
+                <summary>Сортировка</summary>
+            <form>
+                <p>Первый уровень:
+                    <select>
+                        <option>Наименование</option>
+                        <option>Графический процессор</option>
+                        <option>Дата выпуска</option>
+                        <option>Шина</option>
+                        <option>Память</option>
+                        <option>Тактирование процессора</option>
+                        <option>Тактирование памяти</option>
+                        <option>Шейдеры</option>
+                    </select>
+                    <select>
+                        <option>По возрастанию</option>
+                        <option>По убыванию</option>
+                    </select>
+                </p>
+                <p>Второй уровень:
+                    <select>
+                        <option>Наименование</option>
+                        <option>Графический процессор</option>
+                        <option>Дата выпуска</option>
+                        <option>Шина</option>
+                        <option>Память</option>
+                        <option>Тактирование процессора</option>
+                        <option>Тактирование памяти</option>
+                        <option>Шейдеры</option>
+                    </select>
+                    <select>
+                        <option>По возрастанию</option>
+                        <option>По убыванию</option>
+                    </select>
+                </p>
+                <p>Третий уровень:
+                    <select>
+                        <option>Наименование</option>
+                        <option>Графический процессор</option>
+                        <option>Дата выпуска</option>
+                        <option>Шина</option>
+                        <option>Память</option>
+                        <option>Тактирование процессора</option>
+                        <option>Тактирование памяти</option>
+                        <option>Шейдеры</option>
+                    </select>
+                    <select>
+                        <option>По возрастанию</option>
+                        <option>По убыванию</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="button" value="Сортировать">
+                    <input type="reset" value="Сбросить настройки">
+                </p>
+            </form>
+            </details>
+        </p>
+        <p>
+            <details>
+                <p><summary>График</summary></p>
+            <form>
+                <p>
+            Значение по оси OX:<br>
+            <label><input type="radio" name="graph" value="mem">Память</label><br>
+            <label><input type="radio" name="graph" value="date">Год выпуска</label><br>
+            <label><input type="radio" name="graph" value="gpu">Графический процессор</label><br>
+            </p>
+            <p>
+            Результат:<br>
+            <label><input type="checkbox" name="graph" value="gpu_hz">Тактирование процессора(Max)</label><br>
+            <label><input type="checkbox" name="graph" value="gpu_hz">Тактирование процессора(Min)</label><br>
+            <label><input type="checkbox" name="graph" value="mem_hz">Тактирование памяти(Max)</label><br>
+            <label><input type="checkbox" name="graph" value="mem_hz">Тактирование памяти(Min)</label><br>
+            <label><input type="checkbox" name="graph" value="shd">Количество типов плат</label><br>
+            </p>
+            <p>
+            <input type="button" value="Построить">
+            <input type="reset" value="Сбросить настройки">
+            </p>
+            </form>
+            </details>
+        </p>
+        <p>
+            <table border="3" cellpadding="0" cellspacing="0" align="center">
+            <col width=128 span=8>
+            <tr height=58>
+              <td height=58 width=64>Наименование</td>
+              <td width=64>Графический процессор</td>
+              <td width=64>Год выпуска</td>
+              <td width=64>Шина</td>
+              <td width=64>Память</td>
+              <td width=64>Тактирование процессора(MHz)</td>
+              <td width=64>Тактирование памяти(MHz)</td>
+              <td width=64>Шейдеры</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 4090</td>
+              <td width=64>AD102</td>
+              <td width=64>2022</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>24 GB, GDDR6</td>
+              <td width=64>2235</td>
+              <td width=64>1313</td>
+              <td width=64>16384</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 580</td>
+              <td width=64>Polaris 20</td>
+              <td width=64>2017</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>8 GB, GDDR5</td>
+              <td width=64>1257</td>
+              <td width=64>2000</td>
+              <td width=64>2304</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 4070</td>
+              <td width=64>AD104</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>12 GB, GDDR6</td>
+              <td width=64>1920</td>
+              <td width=64>1313</td>
+              <td width=64>5888</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 3060 12 GB</td>
+              <td width=64>GA106</td>
+              <td width=64>2021</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>12 GB, GDDR6</td>
+              <td width=64>1320</td>
+              <td width=64>1875</td>
+              <td width=64>35842</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 4060</td>
+              <td width=64>AD107</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x8</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1830</td>
+              <td width=64>2125</td>
+              <td width=64>3070</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 7800 XT</td>
+              <td width=64>Navi 32</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>16 GB, GDDR6</td>
+              <td width=64>1295</td>
+              <td width=64>2438</td>
+              <td width=64>3840</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 4070 Ti</td>
+              <td width=64>AD104</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>12 GB, GDDR6</td>
+              <td width=64>2310</td>
+              <td width=64>1313</td>
+              <td width=64>7680</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 3060 Ti</td>
+              <td width=64>GA104</td>
+              <td width=64>2020</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1410</td>
+              <td width=64>1750</td>
+              <td width=64>4864</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 3070</td>
+              <td width=64>GA104</td>
+              <td width=64>2020</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1500</td>
+              <td width=64>1750</td>
+              <td width=64>5888</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 4060 Ti 8 GB</td>
+              <td width=64>AD106</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x8</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>2310</td>
+              <td width=64>2250</td>
+              <td width=64>4352</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1650</td>
+              <td width=64>TU117</td>
+              <td width=64>2019</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>4 GB, GDDR5</td>
+              <td width=64>1485</td>
+              <td width=64>2001</td>
+              <td width=64>8962</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 6700 XT</td>
+              <td width=64>Navi 22</td>
+              <td width=64>2021</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>12 GB, GDDR6</td>
+              <td width=64>2321</td>
+              <td width=64>2000</td>
+              <td width=64>2560</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 2060</td>
+              <td width=64>TU106</td>
+              <td width=64>2019</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>6 GB, GDDR6</td>
+              <td width=64>1365</td>
+              <td width=64>1750</td>
+              <td width=64>1920</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 5700 XT</td>
+              <td width=64>Navi 10</td>
+              <td width=64>2019</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1605</td>
+              <td width=64>1750</td>
+              <td width=64>2560</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 6600</td>
+              <td width=64>Navi 23</td>
+              <td width=64>2021</td>
+              <td width=64>PCIe 4.0 x8</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1626</td>
+              <td width=64>1750</td>
+              <td width=64>1792</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1660 SUPER</td>
+              <td width=64>TU116</td>
+              <td width=64>2019</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>6 GB, GDDR6</td>
+              <td width=64>1530</td>
+              <td width=64>1750</td>
+              <td width=64>1408</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 4080</td>
+              <td width=64>AD103</td>
+              <td width=64>2022</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>16 GB, GDDR6</td>
+              <td width=64>2205</td>
+              <td width=64>1400</td>
+              <td width=64>9722</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 7600</td>
+              <td width=64>Navi 33</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x8</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1720</td>
+              <td width=64>2250</td>
+              <td width=64>2048</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 7900 XTX</td>
+              <td width=64>Navi 31</td>
+              <td width=64>2022</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>24 GB, GDDR6</td>
+              <td width=64>1855</td>
+              <td width=64>2500</td>
+              <td width=64>6142</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 3080</td>
+              <td width=64>GA102</td>
+              <td width=64>2020</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>10 GB, GDDR6</td>
+              <td width=64>1440</td>
+              <td width=64>1188</td>
+              <td width=64>8704</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1080 Ti</td>
+              <td width=64>GP102</td>
+              <td width=64>2017</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>11 GB, GDDR5</td>
+              <td width=64>1481</td>
+              <td width=64>1376</td>
+              <td width=64>35844</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 570</td>
+              <td width=64>Polaris 20</td>
+              <td width=64>2017</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>4 GB, GDDR5</td>
+              <td width=64>1168</td>
+              <td width=64>1750</td>
+              <td width=64>2048</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1060 6 GB</td>
+              <td width=64>GP106</td>
+              <td width=64>2016</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>6 GB, GDDR5</td>
+              <td width=64>1506</td>
+              <td width=64>2002</td>
+              <td width=64>1280</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1050 Ti</td>
+              <td width=64>GP107</td>
+              <td width=64>2016</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>4 GB, GDDR5</td>
+              <td width=64>1291</td>
+              <td width=64>1752</td>
+              <td width=64>7684</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 3050 8 GB</td>
+              <td width=64>GA106</td>
+              <td width=64>2022</td>
+              <td width=64>PCIe 4.0 x8</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1552</td>
+              <td width=64>1750</td>
+              <td width=64>2560</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 580 2048SP</td>
+              <td width=64>Polaris 20</td>
+              <td width=64>2018</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>4 GB, GDDR5</td>
+              <td width=64>1168</td>
+              <td width=64>1750</td>
+              <td width=64>2048</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 7700 XT</td>
+              <td width=64>Navi 32</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>12 GB, GDDR6</td>
+              <td width=64>1700</td>
+              <td width=64>2250</td>
+              <td width=64>3456</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 970</td>
+              <td width=64>GM204</td>
+              <td width=64>2014</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>4 GB, GDDR5</td>
+              <td width=64>1050</td>
+              <td width=64>1753</td>
+              <td width=64>1664</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 2080 Ti</td>
+              <td width=64>TU102</td>
+              <td width=64>2018</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>11 GB, GDDR6</td>
+              <td width=64>1350</td>
+              <td width=64>1750</td>
+              <td width=64>4352</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 2060 SUPER</td>
+              <td width=64>TU106</td>
+              <td width=64>2019</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1470</td>
+              <td width=64>1750</td>
+              <td width=64>2176</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 3090</td>
+              <td width=64>GA102</td>
+              <td width=64>2020</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>24 GB, GDDR6</td>
+              <td width=64>1395</td>
+              <td width=64>1219</td>
+              <td width=64>10496</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1070</td>
+              <td width=64>GP104</td>
+              <td width=64>2016</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>8 GB, GDDR5</td>
+              <td width=64>1506</td>
+              <td width=64>2002</td>
+              <td width=64>1920</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 4050</td>
+              <td width=64>AD107</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x8</td>
+              <td width=64>6 GB, GDDR</td>
+              <td width=64>2505</td>
+              <td width=64>2250</td>
+              <td width=64>2560</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 6600 XT</td>
+              <td width=64>Navi 23</td>
+              <td width=64>2021</td>
+              <td width=64>PCIe 4.0 x8</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1968</td>
+              <td width=64>2000</td>
+              <td width=64>2048</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Arc A580</td>
+              <td width=64>DG2-512</td>
+              <td width=64>2023</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1700</td>
+              <td width=64>2000</td>
+              <td width=64>3072</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 3070 Ti</td>
+              <td width=64>GA104</td>
+              <td width=64>2021</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1575</td>
+              <td width=64>1188</td>
+              <td width=64>6144</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1660 Ti</td>
+              <td width=64>TU116</td>
+              <td width=64>2019</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>6 GB, GDDR6</td>
+              <td width=64>1500</td>
+              <td width=64>1500</td>
+              <td width=64>1536</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1080</td>
+              <td width=64>GP104</td>
+              <td width=64>2016</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>8 GB, GDDR5</td>
+              <td width=64>1607</td>
+              <td width=64>1251</td>
+              <td width=64>2560</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 6750 XT</td>
+              <td width=64>Navi 22</td>
+              <td width=64>2022</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>12 GB, GDDR6</td>
+              <td width=64>2150</td>
+              <td width=64>2250</td>
+              <td width=64>2560</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 960</td>
+              <td width=64>GM206</td>
+              <td width=64>2015</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>2 GB, GDDR5</td>
+              <td width=64>1127</td>
+              <td width=64>1753</td>
+              <td width=64>1024</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 6650 XT</td>
+              <td width=64>Navi 23</td>
+              <td width=64>2022</td>
+              <td width=64>PCIe 4.0 x8</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>2055</td>
+              <td width=64>2190</td>
+              <td width=64>2048</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 3080 Ti</td>
+              <td width=64>GA102</td>
+              <td width=64>2021</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>12 GB, GDDR6</td>
+              <td width=64>1365</td>
+              <td width=64>1188</td>
+              <td width=64>10240</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 6800 XT</td>
+              <td width=64>Navi 21</td>
+              <td width=64>2020</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>16 GB, GDDR6</td>
+              <td width=64>1825</td>
+              <td width=64>2000</td>
+              <td width=64>4608</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 2070</td>
+              <td width=64>TU106</td>
+              <td width=64>2018</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1410</td>
+              <td width=64>1750</td>
+              <td width=64>2304</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 5600 XT</td>
+              <td width=64>Navi 10</td>
+              <td width=64>2020</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>6 GB, GDDR6</td>
+              <td width=64>1130</td>
+              <td width=64>1500</td>
+              <td width=64>2304</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 750 Ti</td>
+              <td width=64>GM107</td>
+              <td width=64>2014</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>2 GB, GDDR5</td>
+              <td width=64>1020</td>
+              <td width=64>1350</td>
+              <td width=64>640</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce RTX 2070 SUPER</td>
+              <td width=64>TU104</td>
+              <td width=64>2019</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>8 GB, GDDR6</td>
+              <td width=64>1605</td>
+              <td width=64>1750</td>
+              <td width=64>2560</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>Radeon RX 7900 XT</td>
+              <td width=64>Navi 31</td>
+              <td width=64>2022</td>
+              <td width=64>PCIe 4.0 x16</td>
+              <td width=64>20 GB, GDDR6</td>
+              <td width=64>1500</td>
+              <td width=64>2500</td>
+              <td width=64>5376</td>
+            </tr>
+            <tr height=58>
+              <td height=58 width=64>GeForce GTX 1660</td>
+              <td width=64>TU116</td>
+              <td width=64>2019</td>
+              <td width=64>PCIe 3.0 x16</td>
+              <td width=64>6 GB, GDDR5</td>
+              <td width=64>1530</td>
+              <td width=64>2001</td>
+              <td width=64>1408</td>
+            </tr>
+          </table>
+        </p>
+    </font>
+    </body>
