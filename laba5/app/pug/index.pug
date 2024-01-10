@@ -1,0 +1,44 @@
+mixin create_menu
+	- var i = 1;
+	div.menu
+		while i <= 3
+			div
+				a(href="#")
+					span Menu_#{i}
+			- i++;	
+
+<!DOCTYPE html>
+html
+	head
+		title Видеокарты
+		link(rel="stylesheet", href="./css/main.css")
+	body(background="./img/background.jpg")
+		article
+			header
+				div.hat
+					p Видеокарты - Отрисуй свой мир!
+					+create_menu
+			div.main_part
+				div
+					img(src="./img/1650.png")
+					h3 1650
+					span Видеокарта KFA2 GeForce GTX 1650 X Black – модель компактных размеров для игрового компьютера. Обладая длиной 215 мм, она занимает два слота расширения на материнской плате и отличается высоким уровнем производительности.
+				div
+					img(src="./img/3050.png")
+					h3 3050
+					span Видеокарта INNO3D GEFORCE RTX 3050 TWIN X2 – надежное и мощное дополнение игрового компьютера. Благодаря архитектуре NVIDIA RTX второго поколения и скоростной памяти стандарта GDDR6 объемом 8 ГБ .
+			div.articles
+				- var i = 5;
+				each desc in ["Красивая", "Дорогая", "Классная", "Зачем вот оно надо", "Почку жалко", "Были бы деньги"]
+					div
+						if i <= 7
+							img(src=`./img/30${i}0.png`)
+							h3 30#{i}0
+						else
+							img(src=`./img/30${i-3}0.png`)
+							h3 30#{i-3}0ti
+						span= desc
+						- i++;
+			footer
+				div.left © Костюченко А. И., Б9121-09.03.04, 2023-2024
+				div.right kostyuchenko.ai@dvfu.ru
