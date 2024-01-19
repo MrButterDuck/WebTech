@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Характеристики</title>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body>
+    <div class="wrapper"> 
+      <div class="header">
+        <div class="top">
+          <div class="logo">Видеокарты</div>
+          <div class="menu"> 
+            <div><a href="index.html">Главная</a></div>
+            <div><a href="table.html">Характеристики</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="table_content">
+        <details> 
+          <summary>фильтр</summary>
+          <form>
+            <label class="lable">Шина: 
+              <input class="input" type="text"/>
+            </label>
+            <label class="lable">Процессор: 
+              <input class="input" type="text"/>
+            </label>
+            <label class="lable">Память: 
+              <input class="input" type="text"/>
+            </label>
+            <label class="lable">Шейдеры: 
+              <input class="input" type="text"/>
+            </label>
+            <label class="lable">Дата выпуска: от 
+              <input class="input" type="date"/>
+            </label>
+            <label class="lable">Дата выпуска: до 
+              <input class="input" type="date"/>
+            </label>
+            <label class="lable">Тактирование процессора: от 
+              <input class="input" type="number"/>
+            </label>
+            <label class="lable">Тактирование процессора: до
+              <input class="input" type="number"/>
+            </label>
+            <label class="lable">Тактирование памяти: от 
+              <input class="input" type="number"/>
+            </label>
+            <label class="lable">Тактирование памяти: до 
+              <input class="input" type="number"/>
+            </label>
+            <input class="input" type="button" value="Найти"/>
+            <input class="input" type="reset" value="Сбросить фильтр"/>
+          </form>
+        </details>
+        <details> 
+          <summary>Сортировка </summary>
+          <form> 
+            <p>Первый уровень:</p>
+            <select> 
+              <option>Наименование</option>
+              <option>Графический процессор</option>
+              <option>Дата выпуска</option>
+              <option>Шина</option>
+              <option>Память</option>
+              <option>Тактирование процессора</option>
+              <option>Тактирование памяти</option>
+              <option>Шейдеры</option>
+            </select>
+            <select> 
+              <option>По возрастанию</option>
+              <option>По убыванию </option>
+            </select>
+            <p>Второй уровень:</p>
+            <select> 
+              <option>Наименование</option>
+              <option>Графический процессор</option>
+              <option>Дата выпуска</option>
+              <option>Шина</option>
+              <option>Память</option>
+              <option>Тактирование процессора</option>
+              <option>Тактирование памяти</option>
+              <option>Шейдеры</option>
+            </select>
+            <select> 
+              <option>По возрастанию</option>
+              <option>По убыванию</option>
+            </select>
+            <p>Третий уровень:</p>
+            <select> 
+              <option>Наименование</option>
+              <option>Графический процессор</option>
+              <option>Дата выпуска</option>
+              <option>Шина</option>
+              <option>Память</option>
+              <option>Тактирование процессора</option>
+              <option>Тактирование памяти</option>
+              <option>Шейдеры</option>
+            </select>
+            <select> 
+              <option>По возрастанию</option>
+              <option>По убыванию</option>
+            </select>
+            <input class="input" type="button" value="Сортировать"/>
+            <input class="input" type="reset" value="Сбросить настройки"/>
+          </form>
+        </details>
+        <details> 
+          <summary>График </summary>
+          <p>Значение по оси OX:</p>
+          <form> </form>
+          <label class="lable">Память
+            <input class="input" type="radio" name="graph" value="mem"/>
+          </label>
+          <label class="lable">Год выпуска
+            <input class="input" type="radio" name="graph" value="date"/>
+          </label>
+          <label class="lable">Графический процессор
+            <input class="input" type="radio" name="graph" value="gpu"/>
+          </label>
+          <p>Результат:
+            <label class="lable">Тактирование процессора(Max)  
+              <input class="input" type="checkbox" name="graph" value="gpu_hz"/>
+            </label>
+            <label class="lable">Тактирование процессора(Min) 
+              <input class="input" type="checkbox" name="graph" value="gpu_hz"/>
+            </label>
+            <label class="lable">Тактирование памяти(Max)  
+              <input class="input" type="checkbox" name="graph" value="mem_hz"/>
+            </label>
+            <label class="lable">Тактирование памяти(Min) 
+              <input class="input" type="checkbox" name="graph" value="mem_hz"/>
+            </label>
+            <label class="lable">Количество типов плат
+              <input class="input" type="checkbox" name="graph" value="shd"/>
+            </label>
+            <input class="input" type="button" value="Построить"/>
+            <input class="input" type="reset" value="Сбросить настройки"/>
+          </p>
+        </details>
+              <table class="table" cellspacing="0" border="3">
+                <thead>
+                  <tr> 
+                    <td>Наименование</td>
+                    <td>Графический процессор</td>
+                    <td>Год выпуска</td>
+                    <td>Шина</td>
+                    <td>Память</td>
+                    <td>Тактирование процессора(MHz)</td>
+                    <td>Тактирование памяти(MHz)</td>
+                    <td>Шейдер</td>
+                  </tr>
+                </thead>
+                <tbody> 
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                  <tr> 
+                    <td>GeForce RTX 4090</td>
+                    <td>AD102</td>
+                    <td>2022</td>
+                    <td>PCIe 4.0 x16</td>
+                    <td>24 GB, GDDR6</td>
+                    <td>2235</td>
+                    <td>1313</td>
+                    <td>16384</td>
+                  </tr>
+                  <tr> 
+                    <td>Radeon RX 580</td>
+                    <td>Polaris 20</td>
+                    <td>2017</td>
+                    <td>PCIe 3.0 x16</td>
+                    <td>8 GB, GDDR5</td>
+                    <td>1257</td>
+                    <td>2000</td>
+                    <td>2304</td>
+                  </tr>
+                </tbody>
+              </table>
+      </div>
+      <div class="footer">
+        <div class="bottom">
+          <div>© Костюченко А. И., Б9121-09.03.04, 2023-2024</div>
+          <div>kostyuchenko.ai@dvfu.ru</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

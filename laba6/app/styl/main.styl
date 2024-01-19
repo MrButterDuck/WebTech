@@ -1,0 +1,325 @@
+// переменная
+hundred = 100%
+//миксин
+grid-t(row_c, row_s, column_c, column_s)
+	grid-template-columns repeat(column_c, column_s)
+	grid-template-rows repeat(row_c, row_s)
+
+body
+	font 1.1em "Segoe UI"
+	height hundred
+	margin 0
+	padding 0
+	overflow-x hidden
+
+html
+	height hundred
+
+.wrapper
+	background url(/img/background.jpg)
+    width 90%
+    height hundred
+    margin auto
+	position relative
+	
+.header
+	height 2em
+
+.top
+	width hundred
+	background white
+	font 1.5em "Roboto"
+	display grid
+	grid-t(1, 1fr, 2, 1fr)
+	justify-content center
+	padding 0.5em
+
+.menu
+	display grid
+	grid-template-columns 1fr 1fr
+	grid-template-rows 1fr
+	grid-column-gap 1em
+	text-decoration none
+	& div
+		&:last-child
+			text-align center
+			> a
+				color black
+				text-decoration none
+		&:first-child
+			text-align right
+			> a
+				color black
+				text-decoration none
+
+.footer 
+    bottom 0
+	width hundred
+
+.bottom
+	background white
+	font 1em "Roboto"
+	display grid
+	grid-template-columns 1fr 1fr
+	grid-template-rows 1fr
+	justify-content center
+	padding 0.5em
+	> div
+		&:last-child
+			text-align right
+	
+.main_imgs
+	margin auto
+	margin-bottom 3%
+	display grid
+	grid-template-columns repeat(4, 50%)
+	grid-template-rows 1fr
+	overflow-y hidden
+	overflow-x scroll
+	width 80%
+	min-width 500px
+	border-radius 15px
+	& div
+		width hundred
+		height hundred
+		display inline-block
+		overflow hidden
+		margin 0
+		> img 
+			display block
+			min-height hundred
+			min-width hundred
+			width hundred
+			&:hover
+				transform scale(1.5)
+
+#scrollbar1::-webkit-scrollbar
+	width 10px
+
+#scrollbar1::-webkit-scrollbar-track
+	border-radius 10px
+	background-color #e7e7e7
+	border 1px solid #cacaca
+
+#scrollbar1::-webkit-scrollbar-thumb
+	border-radius 10px
+	background-color rgba(40, 40, 40, 0.4)
+
+.main_content
+	display block
+	background-color rgba(128, 128, 128, 0.4)
+	width 80%
+	min-width 600px
+	margin auto
+	margin-top 50px
+	margin-bottom 25px
+
+
+.articles
+	display grid
+	grid-template-rows repeat(15, auto)
+	justify-content center
+	justify-items center
+	height fit-content
+	grid-row-gap 0.2em
+	min-width 500px
+
+.article
+	display grid
+	color white
+	padding 0 1%
+	grid-template-columns 1fr 1fr
+	grid-template-rows 1fr
+	background-color rgba(40, 40, 40, 0.4)
+	height 60%
+	width hundred
+	min-width 500px
+	justify-content center
+	align-content center
+	align-items center
+
+.right
+	> div
+		&:last-child
+			height 55%
+			> img
+				display block 
+				height hundred
+		&:first-child
+			display grid
+			grid-template-columns 1fr 1fr 1fr
+			grid-template-rows 1fr
+			grid-column-gap 1em  
+			height 50%
+			margin auto
+			justify-content center
+			align-content center
+			align-items center
+			> div
+				text-align center
+				> a
+					color white
+					text-decoration none
+
+.left
+	> div
+		&:first-child
+			height 55%
+			> img
+				display block 
+				height hundred
+		&:last-child
+			display grid
+			grid-template-columns 1fr 1fr 1fr
+			grid-template-rows 1fr
+			grid-column-gap 1em 
+			margin auto
+			height 50%
+			justify-content center
+			align-content center
+			align-items center
+			> div
+				text-align center
+				> a
+					color white
+					text-decoration none
+
+.table_content
+	color white
+	display block
+	background-color rgba(128, 128, 128, 0.4)
+	width 80%
+	height hundred
+	margin auto
+	margin-top 50px
+	margin-bottom 25px
+
+.table
+	width hundred
+	color black
+	text-align center
+	margin-bottom 20px
+	border 5px solid #fff
+	border-top 5px solid #fff
+	border-bottom 3px solid #fff
+	border-collapse collapse 
+	outline 3px solid #4ffe8c
+	font-size 15px
+	background #fff
+	& th
+		font-weight bold
+		padding 7px
+		background #4ffe8c
+		border none
+		text-align left
+		font-size 15px
+		border-top 3px solid #fff
+		border-bottom 3px solid #4ffe8c
+	& tr
+		padding 7px
+		border none
+		border-top 3px solid #fff
+		border-bottom 3px solid #fff
+		font-size 15px
+	& thead
+		background #4ffe8c
+	& tbody 
+		&tr
+			&:nth-child(even)
+				background #f8f8f8
+
+.label
+	font-family 'Roboto', sans-serif 
+	font-size 1.2rem 
+	margin-left 2rem 
+	margin-top 0.7rem 
+	display block 
+	transition all 0.3s 
+	transform translateY(0rem)
+	 
+
+.input
+	font-family 'Roboto', sans-serif 
+	color #333 
+	font-size 0.8rem 
+	margin 10px 5px 
+	padding 1.5rem 2rem 
+	border-radius 0.1rem 
+	background-color rgb(255, 255, 255) 
+	border none 
+	width 20% 
+	display block 
+	border-bottom 0.3rem solid transparent 
+	transition all 0.3s 
+
+.about_content
+	color white
+	display block
+	background-color rgba(128, 128, 128, 0.4)
+	width 80%
+	height hundred
+	margin auto
+	margin-top 50px
+	margin-bottom 38%
+	font-size: 1.5em
+	> div
+		height 60% 
+		padding 10px
+		> img 
+			margin-right 10px 
+			float left
+
+@media (max-width 800px)
+	.top
+		grid-template-columns 1fr
+		grid-template-rows 1fr 1fr
+	.logo
+		text-align center
+	.menu
+		& div
+			&:last-child
+				text-align left
+	.main_content
+		margin-top 100px
+		min-width 750px
+		width: 750px
+	.right
+		> div
+			&:last-child
+				> img
+					display: block 
+					object-fit: fill
+					width: 90%
+					height hundred
+			&:first-child
+				grid-template-rows 1fr 1fr 1fr
+				grid-template-columns 1fr
+
+	.left
+		> div
+			&:first-child
+				> img
+					display: block 
+					object-fit: fill
+					width: 90%
+					height hundred
+			&:last-child
+				grid-template-rows 1fr 1fr 1fr
+				grid-template-columns 1fr
+	.table_content
+		margin-top 100px
+		min-width 750px
+		width: 750px
+	.table
+		min-width 600px
+		width: 600px
+	.about_content
+		margin-top 100px
+		min-width 750px
+		width: 750px
+		> div
+			> img 
+				margin-right 0px 
+				width: 500px
+
+			

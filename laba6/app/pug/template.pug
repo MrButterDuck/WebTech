@@ -1,0 +1,14 @@
+block variables
+<!DOCTYPE html>
+html
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		title #{title}
+		link(rel="stylesheet", href="css/main.css")
+	body
+		div.wrapper 
+			block header
+				include header.pug
+			block content
+			block footer

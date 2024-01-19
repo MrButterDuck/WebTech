@@ -1,0 +1,42 @@
+extends template
+block variables
+	- var title = 'Главная страница'
+block content
+	div.main_content
+		div.main_imgs#scrollbar1
+			div 
+				img(src="./img/1650.png")
+			div 
+				img(src="./img/1660ti.png")
+			div 
+				img(src="./img/3050.png")
+			div 
+				img(src="./img/3060.png")
+		div.less
+			div.articles
+				- var i = true
+				-var j = 1
+				while j <= 15
+					if i == true
+						- i = false
+						div.article.right
+							div
+								div 
+									a(href="about"+j+".html") Описание 
+								div Характеристики 
+								div Отзывы
+							div 
+								img(src="./img/cards/"+j+".png")
+					else 
+						- i = true
+						div.article.left 
+							div 
+								img(src="./img/cards/"+j+".png")
+							div 
+								div 
+									a(href="about"+j+".html") Описание 
+								div Характеристики 
+								div Отзывы
+					- j++
+block footer
+	include footer.pug

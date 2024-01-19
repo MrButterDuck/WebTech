@@ -1,0 +1,162 @@
+extends template
+block variables
+	- var title = 'Характеристики'
+block header
+	include header.pug
+block content
+
+	mixin create_table(listLi = [])
+		table.table(cellspacing="0" border="3")
+				thead
+					tr 
+						td Наименование
+						td Графический процессор
+						td Год выпуска
+						td Шина
+						td Память
+						td Тактирование процессора(MHz)
+						td Тактирование памяти(MHz)
+						td Шейдер
+				tbody 
+					each row in listLi
+						tr 
+							td #{row.Name}
+							td #{row.graph_proc}
+							td #{row.year}
+							td #{row.wire}
+							td #{row.memory}
+							td #{row.MHz_proc}
+							td #{row.MHz_memory}
+							td #{row.Shaders}
+	div.table_content
+		details 
+			summary фильтр
+			form
+				label.lable Шина: 
+					input.input(type="text") 
+				label.lable Процессор: 
+					input.input(type="text") 
+				label.lable Память: 
+					input.input(type="text") 
+				label.lable Шейдеры: 
+					input.input(type="text") 
+				label.lable Дата выпуска: от 
+					input.input(type="date")   
+				label.lable Дата выпуска: до 
+					input.input(type="date") 
+				label.lable Тактирование процессора: от 
+					input.input(type="number")   
+				label.lable Тактирование процессора: до
+					input.input(type="number") 
+				label.lable Тактирование памяти: от 
+					input.input(type="number")   
+				label.lable Тактирование памяти: до 
+					input.input(type="number") 
+				input.input(type="button" value="Найти")  
+				input.input(type="reset" value="Сбросить фильтр")  
+		details 
+			summary Сортировка 
+			form 
+				p Первый уровень:
+				select 
+					option Наименование
+					option Графический процессор
+					option Дата выпуска
+					option Шина
+					option Память
+					option Тактирование процессора
+					option Тактирование памяти
+					option Шейдеры
+				select 
+					option По возрастанию
+					option По убыванию 
+				p Второй уровень:
+				select 
+					option Наименование
+					option Графический процессор
+					option Дата выпуска
+					option Шина
+					option Память
+					option Тактирование процессора
+					option Тактирование памяти
+					option Шейдеры
+				select 
+					option По возрастанию
+					option По убыванию
+				p Третий уровень:
+				select 
+					option Наименование
+					option Графический процессор
+					option Дата выпуска
+					option Шина
+					option Память
+					option Тактирование процессора
+					option Тактирование памяти
+					option Шейдеры
+				select 
+					option По возрастанию
+					option По убыванию
+				input.input(type="button" value="Сортировать")  
+				input.input(type="reset" value="Сбросить настройки")  
+		details 
+			summary График 
+			p Значение по оси OX:
+			form 
+			label.lable Память
+				input.input(type="radio" name="graph" value="mem")  
+			label.lable Год выпуска
+				input.input(type="radio" name="graph" value="date") 
+			label.lable Графический процессор
+				input.input(type="radio" name="graph" value="gpu") 
+			p Результат:
+				label.lable Тактирование процессора(Max)  
+					input.input(type="checkbox" name="graph" value="gpu_hz") 
+				label.lable Тактирование процессора(Min) 
+					input.input(type="checkbox" name="graph" value="gpu_hz") 
+				label.lable Тактирование памяти(Max)  
+					input.input(type="checkbox" name="graph" value="mem_hz") 
+				label.lable Тактирование памяти(Min) 
+					input.input(type="checkbox" name="graph" value="mem_hz") 
+				label.lable Количество типов плат
+					input.input(type="checkbox" name="graph" value="shd") 
+				input.input(type="button" value="Построить")  
+				input.input(type="reset" value="Сбросить настройки")
+
+		- 
+			var table = [
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				{'Name': "GeForce RTX 4090",'graph_proc': "AD102",'year': "2022",'wire': "PCIe 4.0 x16",'memory': "24 GB, GDDR6",'MHz_proc': "2235",'MHz_memory': "1313",'Shaders': "16384"},
+				{'Name':  "Radeon RX 580",'graph_proc': "Polaris 20",'year': "2017",'wire': "PCIe 3.0 x16",'memory': "8 GB, GDDR5",'MHz_proc': "1257",'MHz_memory': "2000",'Shaders': "2304"},
+				]
+		+create_table(table)
+block footer
+	include footer.pug
