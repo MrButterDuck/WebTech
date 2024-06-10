@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Характеристики</title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper" style="background-image: url('./img/background.jpg');"> 
+      <div class="header">
+        <div class="top">
+          <div class="logo">Видеокарты</div>
+          <div class="menu"> 
+            <div><a href="index.html">Главная</a></div>
+            <div><a href="table.html">Характеристики</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="table_content">
+        <details> 
+          <summary>фильтр</summary>
+          <form id="filter">
+            <label for="wire" class="lable">Шина: 
+              <input id="wire" class="input" type="text"/>
+            </label>
+            <label for="graph_proc" class="lable">Процессор: 
+              <input id="graph_proc" class="input" type="text"/>
+            </label>
+            <label for="memory" class="lable">Память: 
+              <input id="memory" class="input" type="text"/>
+            </label>
+            <label for="shadersFrom" class="lable">Шейдеры: от
+              <input id="shadersFrom" class="input" type="number"/>
+            </label>
+            <label for="shadersTo" class="lable">Шейдеры: до
+              <input id="shadersTo" class="input" type="number"/>
+            </label>
+            <label for="yearFrom" class="lable">Дата выпуска: от 
+              <input id="yearFrom" class="input" type="date"/>
+            </label>
+            <label for="yearTo" class="lable">Дата выпуска: до 
+              <input id="yearTo" class="input" type="date"/>
+            </label>
+            <label for="MHz_procFrom" class="lable">Тактирование процессора: от 
+              <input id="MHz_procFrom" class="input" type="number"/>
+            </label>
+            <label for="MHz_procTo" class="lable">Тактирование процессора: до
+              <input id="MHz_procTo" class="input" type="number"/>
+            </label>
+            <label for="MHz_memoryFrom" class="lable">Тактирование памяти: от 
+              <input id="MHz_memoryFrom" class="input" type="number"/>
+            </label>
+            <label for="MHz_memoryTo" class="lable">Тактирование памяти: до 
+              <input id="MHz_memoryTo" class="input" type="number"/>
+            </label>
+          </form>
+          <input id="filter_button" class="input" type="button" value="Найти" />
+          <input id="clearFilters" class="input" type="reset" value="Сбросить фильтр"/>
+        </details>
+        <details> 
+          <summary>Сортировка </summary>
+          <form id="sort"> 
+            <p>Первый уровень:</p>
+            <select class="input_sort" id="first_sort"></select>
+            по убыванию?<input class="input_sort_check" type="checkbox" id="first_sort_check"/>
+            <p>Второй уровень:</p>
+            <select class="input_sort" id="second_sort"></select>
+            по убыванию?<input class="input_sort_check" type="checkbox" id="second_sort_check"/>
+            <p>Третий уровень:</p>
+            <select class="input_sort" id="third_sort"></select>
+            по убыванию?<input class="input_sort_check" type="checkbox" id="third_sort_check"/>
+            <input id="sort_but" class="input" type="button" value="Сортировать"/>
+            <input id="sort_res"class="input" type="reset" value="Сбросить настройки"/>
+          </form>
+        </details>
+        <details> 
+          <summary>График </summary>
+          <p><h3>Значение по оси OX:</h3>
+          <form id="graph">
+          <label class="lable">Память:
+            <input class="input_graph_radio" type="radio" name="ox" value="memory"/>
+          </label><br>
+          <label class="lable">Год выпуска:
+            <input class="input_graph_radio" type="radio" name="ox" value="year"/>
+          </label><br>
+          <label class="lable">Графический процессор:
+            <input class="input_graph_radio" type="radio" name="ox" value="graph_proc"/>
+          </label><br></p>
+          <p><h3>Результат:</h3>
+            <label class="lable">Тактирование процессора(Max):  
+              <input class="input_graph_check" type="checkbox" name="oy" value="gpu_hz"/>
+            </label><br>
+            <label class="lable">Тактирование процессора(Min): 
+              <input class="input_graph_check" type="checkbox" name="oy" value="gpu_hz"/>
+            </label></p></form>
+            <input id="graph_but" class="input" type="button" value="Точки"/>
+            <input id="stolb_but" class="input" type="button" value="Столбцы"/>
+            <input id="clear_graph" class="input" type="reset" value="Сбросить настройки"/>
+            <svg height=10> </svg>
+        </details>
+              <table id="main_table" class="table" cellspacing="0" border="3">
+              </table>
+      </div>
+      <div class="footer">
+        <div class="bottom">
+          <div>© Костюченко А. И., Б9121-09.03.04, 2023-2024</div>
+          <div>kostyuchenko.ai@dvfu.ru</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/main.js"></script>
+ <script src="js/table.js"></script>
+</html>

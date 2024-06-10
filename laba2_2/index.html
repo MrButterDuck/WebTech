@@ -1,0 +1,54 @@
+<html >
+    <head>
+     <meta charset="utf-8">
+     <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+     <div class="task" style="border: solid thin; display:inline-block">
+     <img src="pic1.png" id="image1" style="width:300px">
+     <img src="pic2.png" id="image2" style="width:300px; display:none">
+     <div>
+         <label><input type="radio" name="Selector" value="opt1" checked>По основанию трапеции и углу межу основанием и боковой стороной</label></br>
+         <label><input type="radio" name="Selector" value="opt2">По основанию трапеции и высоте к основанию</label></br>
+         <input type="button" value="Показать" onClick="toggleImage()">
+     </div>     
+     <div class="input">
+         <form>
+             <p>
+                 <label>AD =
+                    <input type="number" id="input1" min=0 max=200>
+                 </label>
+             </p>
+             <p>
+                 <label>BC =
+                    <input type="number" id="input2" min=0 max=200>
+                 </label>
+             </p>
+             <p id="inp1">
+                 <label>∠BAD =
+                    <input type="number" id="input3" min=0 max=90>
+                 </label>
+             </p>
+             <p id="inp2" style="display:none">
+                 <label>BH =
+                    <input type="number" id="input4" min=0 max=200>
+                 </label>
+             </p>
+             <p ><span id="outputType">Найти: </span><br>
+                 <label><input type="checkbox" id="task1" > диагонали</label></br>
+                 <label><input type="checkbox" id="task2"> неизвкстные стороны</label></br>
+                <label><input type="checkbox" id="task3" > периметр</label></br>
+                 <label><input type="checkbox" id="task4"> высота от основания к боковой стороне</label>
+             </p>
+             <p>
+                 <input type="button" value="Вычислить" onClick="calculate(this.form)">
+                 <input type="button" value="Очистить" onClick="clear_calc(this.form)">
+             </p>
+         </form>
+     </div>
+     <div id="output">
+     </div>
+     </div>
+    </body>
+    <script src="program.js"> </script>
+</html>
