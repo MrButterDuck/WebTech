@@ -30,7 +30,7 @@ table_data =[
 {'Name': 'Radeon RX 580 2048SP', 'graph_proc': 'Polaris 20', 'year': '2018', 'wire': 'PCIe 3.0 x16', 'memory': '4 GB, GDDR5', 'MHz_proc': '1168', 'MHz_memory': 
 '1750', 'Shaders': '2048'},
 {'Name': 'Radeon RX 7700 XT', 'graph_proc': 'Navi 32', 'year': '2023', 'wire': 'PCIe 4.0 x16', 'memory': '12 GB, GDDR6', 'MHz_proc': '1700', 'MHz_memory': '2250', 'Shaders': '3456'},
-{'Name': 'GeForce GTX 970', 'graph_proc': 'GM204', 'year': '2014', 'wire': 'PCIe 3.0 x16', 'memory': '4 GB, GDDR5', 'MHz_proc': '1050', 'MHz_memory': '1753', 'Shaders': '1664'},
+{'Name': 'GeForce GTX 970', 'graph_proc': 'GM204', 'year': '2014', 'wire': 'PCIe 3.0 x16', 'memory': '4 GB, GDDR5', 'MHz_proc': '1410', 'MHz_memory': '1753', 'Shaders': '1664'},
 {'Name': 'GeForce RTX 2080 Ti', 'graph_proc': 'TU102', 'year': '2018', 'wire': 'PCIe 3.0 x16', 'memory': '11 GB, GDDR6', 'MHz_proc': '1350', 'MHz_memory': '1750', 'Shaders': '4352'},
 {'Name': 'GeForce RTX 2060 SUPER', 'graph_proc': 'TU106', 'year': '2019', 'wire': 'PCIe 3.0 x16', 'memory': '8 GB, GDDR6', 'MHz_proc': '1470', 'MHz_memory': '1750', 'Shaders': '2176'},
 {'Name': 'GeForce RTX 3090', 'graph_proc': 'GA102', 'year': '2020', 'wire': 'PCIe 4.0 x16', 'memory': '24 GB, GDDR6', 'MHz_proc': '1395', 'MHz_memory': '1219', 'Shaders': '10496'},
@@ -44,11 +44,11 @@ table_data =[
 {'Name': 'GeForce GTX 1080', 'graph_proc': 'GP104', 'year': '2016', 'wire': 'PCIe 3.0 x16', 'memory': '8 GB, GDDR5', 'MHz_proc': '1607', 'MHz_memory': '1251', 
 'Shaders': '2560'},
 {'Name': 'Radeon RX 6750 XT', 'graph_proc': 'Navi 22', 'year': '2022', 'wire': 'PCIe 4.0 x16', 'memory': '12 GB, GDDR6', 'MHz_proc': '2150', 'MHz_memory': '2250', 'Shaders': '2560'},
-{'Name': 'GeForce GTX 960', 'graph_proc': 'GM206', 'year': '2015', 'wire': 'PCIe 3.0 x16', 'memory': '2 GB, GDDR5', 'MHz_proc': '1127', 'MHz_memory': '1753', 'Shaders': '1024'},
+{'Name': 'GeForce GTX 960', 'graph_proc': 'GM206', 'year': '2015', 'wire': 'PCIe 3.0 x16', 'memory': '2 GB, GDDR5', 'MHz_proc': '1500', 'MHz_memory': '1753', 'Shaders': '1024'},
 {'Name': 'Radeon RX 6650 XT', 'graph_proc': 'Navi 23', 'year': '2022', 'wire': 'PCIe 4.0 x8', 'memory': '8 GB, GDDR6', 'MHz_proc': '2055', 'MHz_memory': '2190', 'Shaders': '2048'},
 {'Name': 'GeForce RTX 3080 Ti', 'graph_proc': 'GA102', 'year': '2021', 'wire': 'PCIe 4.0 x16', 'memory': '12 GB, GDDR6', 'MHz_proc': '1365', 'MHz_memory': '1188', 'Shaders': '10240'},
 {'Name': 'Radeon RX 6800 XT', 'graph_proc': 'Navi 21', 'year': '2020', 'wire': 'PCIe 4.0 x16', 'memory': '16 GB, GDDR6', 'MHz_proc': '1825', 'MHz_memory': '2000', 'Shaders': '4608'},
-{'Name': 'GeForce RTX 2070', 'graph_proc': 'TU106', 'year': '2018', 'wire': 'PCIe 3.0 x16', 'memory': '8 GB, GDDR6', 'MHz_proc': '1410', 'MHz_memory': '1750', 
+{'Name': 'GeForce RTX 2070', 'graph_proc': 'TU106', 'year': '2018', 'wire': 'PCIe 3.0 x16', 'memory': '8 GB, GDDR6', 'MHz_proc': '1510', 'MHz_memory': '1750', 
 'Shaders': '2304'},
 {'Name': 'Radeon RX 5600 XT', 'graph_proc': 'Navi 10', 'year': '2020', 'wire': 'PCIe 4.0 x16', 'memory': '6 GB, GDDR6', 'MHz_proc': '1130', 'MHz_memory': '1500', 'Shaders': '2304'},
 {'Name': 'GeForce GTX 750 Ti', 'graph_proc': 'GM107', 'year': '2014', 'wire': 'PCIe 3.0 x16', 'memory': '2 GB, GDDR5', 'MHz_proc': '1020', 'MHz_memory': '1350', 'Shaders': '640'},
@@ -83,8 +83,8 @@ let sortOpt = {
 
 let selectedOptions = {}
 
-const marginX = 60;
-const marginY = 60;
+const marginX = 70;
+const marginY = 70;
 const height = 400;
 const width = 700;
 let svg = d3.select("svg").attr("height", height).attr("width", width).attr('display','none');

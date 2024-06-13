@@ -211,22 +211,21 @@ function createArrGraph(data, key) {
 const createAxis = (data, minCheck, maxCheck) => {
     let firstRange = d3.extent(data.map((d) => Number(d.values[0])));
     let secondRange = d3.extent(data.map((d) => Number(d.values[1])));
-	console.log(data)
-	const [minMin, maxMin] = [Math.min(firstRange[0], secondRange[0]), Math.max(firstRange[0], secondRange[0])]
-	const [minMax, maxMax] = [Math.min(firstRange[1], secondRange[1]), Math.max(firstRange[1], secondRange[1])]
+	const [minMin, maxMin] = [Math.min(firstRange[0], firstRange[1]), Math.max(firstRange[0], firstRange[1])]
+	const [minMax, maxMax] = [Math.min(secondRange[0], secondRange[1]), Math.max(secondRange[0], secondRange[1])]
 	let min;
 	let max;
-	if (minCheck && maxCheck){min = minMin; max; maxMax}
-	else if (minCheck && !maxCheck){min = minMin; max; maxMin}
-	else if (!minCheck && maxCheck){min = minMax; max; maxMax}
-
+	console.log(firstRange, secondRange)
+	if (minCheck && maxCheck){min = firstRange[0]; max = secondRange[1]}
+	else if (minCheck && !maxCheck){min = firstRange[0]; max = firstRange[1]}
+	else if (!minCheck && maxCheck){min = secondRange[0]; max= secondRange[1]}
+	console.log([min * 0.9, max * 1.1])
     let scaleX = d3.scaleBand()
         .domain(data.map((d) => d.labelX))
         .range([0, width - 2 * marginX]);
-	console.log(scaleX)
 
     let scaleY = d3.scaleLinear()
-        .domain([min, max * 1.1]) 
+        .domain([min * 0.9, max * 1.1]) 
         .range([height - 2 * marginY, 0]);
 
     let axisX = d3.axisBottom(scaleX); 
@@ -236,10 +235,6 @@ const createAxis = (data, minCheck, maxCheck) => {
         .attr("transform", `translate(${marginX}, ${height - marginY})`)
         .call(axisX)
         .selectAll("text")
-        .style("text-anchor", "end")
-        .attr("dx", "-.8em")
-        .attr("dy", ".15em")
-        .attr("transform", "rotate(-45)");
 
     svg.append("g")
         .attr("transform", `translate(${marginX}, ${marginY})`)
@@ -250,12 +245,11 @@ const createAxis = (data, minCheck, maxCheck) => {
 
 function createStolbChart(arrGraph, scaleX, scaleY, index, color) {
     const barWidth = scaleX.bandwidth() / 4;
-
+	for(let i = 0; i < arrGraph.length; i++){console.log(scaleX(arrGraph[i].labelX))}
     svg.selectAll(".bar" + index)
         .data(arrGraph)
         .enter()
         .append("rect")
-        .attr("class", "bar" + index)
         .attr("x", (d) => scaleX(d.labelX) + ((index+1) * barWidth))
         .attr("y", (d) => scaleY(d.values[index]))
         .attr("width", barWidth)
@@ -266,7 +260,7 @@ function createStolbChart(arrGraph, scaleX, scaleY, index, color) {
 
 function createPoints(arrGraph, scaleX, scaleY, index, color) {
     const r = 4;
-    let ident = index == 0 ? -r / 2 : r / 2;
+    let ident = index == 0 ? r / 2 : -r / 2;
 
     svg.selectAll(".dot" + index)
         .data(arrGraph)
@@ -286,7 +280,6 @@ function drawGraph(dataId) {
     const isMax = data.oy[0].checked;
 	const isMin = data.oy[1].checked;
     const arrGraph = createArrGraph(table_data, keyX);
-
     svg.selectAll('*').remove();
 
     if (isMin && !isMax) {
@@ -294,11 +287,11 @@ function drawGraph(dataId) {
         createPoints(arrGraph, scX, scY, 0, "springgreen");
     }
     if (isMax && !isMin) {
-		const [scX, scY] = createAxis(arrGraph, 2);
+		const [scX, scY] = createAxis(arrGraph, isMin, isMax);
         createPoints(arrGraph, scX, scY, 1, "white");
     }
 	if (isMax && isMin) {
-		const [scX, scY] = createAxis(arrGraph, 3);
+		const [scX, scY] = createAxis(arrGraph, isMin, isMax);
         createPoints(arrGraph, scX, scY, 1, "white");
 		createPoints(arrGraph, scX, scY, 0, "springgreen");
     }
@@ -310,16 +303,20 @@ function drawStolbGraph(dataId) {
     const isMin = data.oy[1].checked;
     const isMax = data.oy[0].checked;
     const arrGraph = createArrGraph(table_data, keyX);
-
     svg.selectAll('*').remove();
 
-    const [scX, scY] = createAxis(arrGraph,3);
-
-    if (isMin) {
+	if (isMin && !isMax) {
+		const [scX, scY] = createAxis(arrGraph, isMin, isMax);
         createStolbChart(arrGraph, scX, scY, 0, "springgreen");
     }
-    if (isMax) {
+    if (isMax && !isMin) {
+		const [scX, scY] = createAxis(arrGraph, isMin, isMax);
         createStolbChart(arrGraph, scX, scY, 1, "white");
+    }
+	if (isMax && isMin) {
+		const [scX, scY] = createAxis(arrGraph, isMin, isMax);
+        createStolbChart(arrGraph, scX, scY, 1, "white");
+		createStolbChart(arrGraph, scX, scY, 0, "springgreen");
     }
 }
 
